@@ -1,0 +1,33 @@
+name: Analyze templates
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+  workflow_dispatch:
+
+jobs:
+  analyze_arm:
+    name: Analyze repository
+    runs-on: ubuntu-latest
+    if: github.repository != 'Azure/PSRule.Rules.Azure-quickstart'
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    # Analyze Azure resources using PSRule for Azure
+    - name: Analyze Azure template files
+      uses: microsoft/ps-rule@v2.6.0
+      with:
+        modules: 'PSRule.Rules.Azure,PSRule.Monitor'
+        conventions: Monitor.LogAnalytics.Import
+        inputPath: infra
+        baseline: Azure.GA_2022_09
+        outputFormat: Sarif
+        outputPath: reports/ps-rule-results.sarif
+    env:
+      # Define environment variables using GitHub encrypted secrets
+      PSRULE_CONFIGURATION_MONITOR_WORKSPACE_ID: ${{ secrets.MONITOR_WORKSPACE_ID }}
+      PSRULE_CONFIGURATION_MONITOR_WORKSPACE_KEY: ${{ secrets.MONITOR_WORKSPACE_KEY }}
