@@ -1,6 +1,6 @@
 requires:
   # Require a minimum of PSRule for Azure v1.10.2
-  PSRule.Rules.Azure: '>=1.10.2'
+  #PSRule.Rules.Azure: '>=1.10.2'
 
 configuration:
   # Enable expansion of Azure Template files.
