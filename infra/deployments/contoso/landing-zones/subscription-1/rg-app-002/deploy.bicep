@@ -39,7 +39,7 @@ module keyvault '../../../../../modules/keyvault/v1/main.bicep' = {
 
     // Must have a workspace
     // Try commenting out this line to have the Azure.KeyVault.Logs rule fail.
-    workspaceId: '/subscriptions/<subscription_id>/resourceGroups/rg-test/providers/Microsoft.OperationalInsights/workspaces/latest001'
+    workspaceId: '/subscriptions/0c310ab4-e68f-45e7-b7e2-72fbbb32e891/resourceGroups/monitoring-rg/providers/Microsoft.OperationalInsights/workspaces/dapazdtestworkspace'
 
     // An env tag must be test, dev, or prod.
     // Try setting this to 'demo' to fail the Org.Azure.Tags rule.
