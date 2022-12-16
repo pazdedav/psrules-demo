@@ -15,11 +15,6 @@ configuration:
   # Configure the minimum AKS cluster version.
   AZURE_AKS_CLUSTER_MINIMUM_VERSION: 1.22.4
 
-# YAML: Set the Azure_AllowedRegions configuration option to West and North Europe
-  Azure_AllowedRegions:
-  - 'westeurope'
-  - 'northeurope'
-
 output:
   culture:
   - 'en-US'

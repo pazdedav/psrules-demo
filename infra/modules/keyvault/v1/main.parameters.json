@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "value": "dpazdkv01"
+    },
+    "location": {
+      "value": "westeurope"
+    },
+    "workspaceId":{
+      "value": "2780e697-7179-4266-89c0-1dc1ce0ad232"
+    }
+  }
+}
